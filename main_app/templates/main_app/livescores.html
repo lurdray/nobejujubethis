@@ -1,0 +1,58 @@
+{% extends 'main_app/base2.html' %}
+
+{% load static %}
+{% block content %}
+    
+  <!-- header END -->
+    <!-- Content -->
+    <div class="page-content">
+        <!-- inner page banner -->
+        <div class="dez-bnr-inr overlay-black-middle" style="background-image:url(https://c4.wallpaperflare.com/wallpaper/217/951/788/neymar-wallpaper-preview.jpg);">
+            <div class="container">
+                <div class="dez-bnr-inr-entry">
+                    <h1 class="text-white">LiveScores</h1>
+                </div>
+            </div>
+        </div>
+        <!-- inner page banner END -->
+        <!-- Breadcrumb row -->
+        <div class="breadcrumb-row">
+            <div class="container">
+                <ul class="list-inline">
+                    <li><a href="/">Home</a></li>
+                    <li>Livescores</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb row END -->
+        <!-- contact area -->
+        <div class="content-area">
+            <!-- Portfolio -->
+            <div class="container">
+
+                <div class="clearfix">
+                    <ul id="masonry" class="row dez-gallery-listing gallery-grid-4 m-b0 mfp-gallery">
+                        <li class="card-container col-lg-12 col-sm-12 m-b30 home">
+                            <!-- Right Section -->
+          <div class="col-sm-12 col-lg-12 col-12 ">
+            <!-- Match Overview -->
+            <div class="dez-card bg-white">
+              <div class="dez-head-bx m-a-out skew-triangle right-top">
+                <h3 class="m-a0" style="color: #fff;">Soccer Livescores</h3>
+              </div>
+              <iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="100%" height="auto" allowfullscreen allow='autoplay; fullscreen' style="width:600px;height:auto;overflow:hidden;display:block;" class="_scorebatEmbeddedPlayer_"></iframe><script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv';
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'scorebat-jssdk'));</script>
+            </div>
+          </li>
+        </div>
+        <!-- contact END -->
+    </div>
+    <!-- Content END-->
+    <!-- Footer -->
+  
+{% endblock %}

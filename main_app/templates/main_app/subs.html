@@ -1,0 +1,129 @@
+{% extends 'main_app/admin_base.html' %}
+
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+    
+    .alert{
+        box-shadow: 5px 5px 10px #111;
+        border: none;
+    }
+    @keyframes show-toast {
+    0%   {bottom: -100%;}
+    20%  {bottom: 50px;}
+    80%  {bottom: 50px;}
+    100% {bottom: -10%;}
+}
+
+.notification.is-toast {
+    position: fixed;
+    bottom: 100%;
+    right: 20px;
+    animation-name: show-toast;
+    animation-duration: 6s;
+}
+@media(max-width: 450px) {
+    h3{
+      font-size: 15px !important;
+    }
+  }
+</style>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="notification is-toast alert alert-{{message.tags}} text-center" role="alert" style="background-color: #1DB954; color: #fff; border-radius: 6px; font-weight: 600; z-index: 1;">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+<!--start page wrapper -->
+		<div class="page-wrapper">
+			<div class="page-content">
+				<!--breadcrumb-->
+				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+					<div class="breadcrumb-title pe-3">Your Subscriptions</div>
+					<div class="ps-3">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 p-0">
+								<li class="breadcrumb-item"><a href="/"><i class="bx bx-home-alt"></i></a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Subscriptions</li>
+							</ol>
+						</nav>
+					</div>
+					<div class="ms-auto">
+						
+					</div>
+				</div>
+				<!--end breadcrumb-->
+
+				<br /><br />
+				<div class="row">
+					<div class="col-xl-9 mx-auto">
+						
+						<h6 class="mb-0 text-uppercase">Manage your subscriptions</h6>
+						<hr/>
+						<div class="card">
+							<div class="card-body">
+								<table class="table mb-0 table-striped">
+									<thead>
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">Name</th>
+											<th scope="col">Txn Hash</th>
+											<th scope="col">Payment Date</th>
+											<th scope="col">Status</th>
+											<th scope="col">#</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+										{% for rs in subs %}
+										<tr>
+											<th scope="row">{{ forloop.counter }}</th>
+											<td>{{ rs.user.username }}</td>
+											<td>
+												<a href="{% url 'sub_detail' rs.id %}">
+													{{ rs.txn_hash }}
+												</a>
+											</td>
+											<td>{{ rs.pub_date }}</td>
+											<td>
+												{% if rs.approval_status %}
+													Confirmed
+												{% else %}
+													Not Confirmed
+												{% endif %}
+											</td>
+											<td><a class="btn btn-sm btn-warning btn-block" href="{% url 'sub_detail' rs.id %}">Action</a></td>
+										</tr>
+										{% endfor %}
+										
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+
+						
+						
+						
+						
+						
+						
+					</div>
+				</div>
+				<!--end row-->
+			</div>
+		</div>
+		<!--end page wrapper -->
+		<!--start overlay-->
+		<div class="overlay toggle-icon"></div>
+		<!--end overlay-->
+		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		<!--End Back To Top Button-->
+
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock %}

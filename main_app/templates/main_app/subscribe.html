@@ -1,0 +1,71 @@
+{% extends 'main_app/base.html' %}
+
+{% load static %}
+{% block content %}	</header>
+	<!-- header END -->
+    <!-- Content -->
+    <div class="page-content">
+        <!-- inner page banner -->
+        <!-- inner page banner END -->
+        <!-- Breadcrumb row -->
+        <div class="breadcrumb-row">
+            <div class="container">
+                <ul class="list-inline">
+                    <li><a href="index.html">Home</a></li>
+                    <li>Subscribe</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb row END -->
+        <div class="content-area">
+            <!-- Left & right section start -->
+            <div class="container">
+
+                <!-- Pricing table-1 Columns 4 with gap -->
+                <div class="p-b30">
+                    <div class="section-head">
+                        <h2 class="text-uppercase text-center">Subscribe for premuim benefits.</h2>
+                        <p class="text-center">Make your payments to any of the following wallets.</p>
+                    </div>
+                    <div class="section-content">
+                        <div class="pricingtable-row m-b30">
+                            <div class="row">
+
+                                <div class="col-md-4 col-lg-4">
+                                </div>
+
+                                <div class="col-12 col-md-4 col-lg-4">
+                                    <div class="pricingtable-wrapper">
+                                        <div class="pricingtable-inner">
+                                            <div class="pricingtable-price"> <span class="pricingtable-bx">$10</span> <span class="pricingtable-type">Month</span> </div>
+                                            <div class="pricingtable-title bg-primary">
+                                                <h2>Crypto Payment</h2>
+                                            </div>
+                                            <ul class="pricingtable-features">
+                                                <li>BTC: 0x111111111111111111111 </li>
+                                                <li>USDC: 0x111111111111111111111 </li>
+                                                <li>BSC: 0x111111111111111111111 </li>
+                                                <li>ETH: 0x111111111111111111111 </li>
+                                                <li>XRP: 0x111111111111111111111 </li>
+                                            </ul>
+                                            <div class="pricingtable-footer"> <a href="{% url 'subscribe2' %}" class="site-button">Confirm Payment.</a> </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pricing table-1 Columns 4 with gap END-->
+                
+            </div>
+            <!-- Left & right section  END -->
+        </div>
+    </div>
+    <!-- Left & right section END -->
+    <!-- Content END-->
+{% endblock %}
